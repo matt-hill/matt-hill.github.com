@@ -1,7 +1,15 @@
 ---
-layout: default
+layout: post
 title: test
+tags: [some,other,tag]
+time: "21:12"
 ---
 
 # this is a test
 Did this work?
+
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
