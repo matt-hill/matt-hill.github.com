@@ -9,7 +9,7 @@ time: "21:12"
 Did this work?
 
 ```ruby
-require 'redcarpet'  
-markdown = Redcarpet.new("Hello World!")  
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
 ```
