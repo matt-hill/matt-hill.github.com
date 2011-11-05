@@ -5,7 +5,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Moonlit Script</title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}Moonlit Script</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -78,23 +78,26 @@
 			
 			<hr/>
 			
-      <div class="row">
-				<div class="span16">
-					<img class="gravatar" src="http://www.gravatar.com/avatar/b03a69bb41e16893f89f361344d4dbff?size=80" />
+			{% for post in site.posts limit:1 %}
+      	<div class="row">
+					<div class="span16">
+						<img class="gravatar" src="http://www.gravatar.com/avatar/b03a69bb41e16893f89f361344d4dbff?size=80" />
 					
-					<h2><a href="#">Lorem Ipsum</a></h2>
-					<span class="muted">2012-12-21</span><br/>
-					<span class="label tag">Default</span>
-					<span class="label tag">Default</span>
-					<span class="label tag">Default</span>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu nunc libero. Integer in leo at est aliquet porttitor. Nunc gravida elit non massa consequat accumsan vel vitae turpis. Nullam porttitor tristique tellus, sit amet scelerisque tellus porttitor ac. Morbi suscipit, arcu non auctor aliquet, ipsum arcu tempus augue, id lobortis enim elit fringilla libero. Donec laoreet metus eu magna ultrices placerat. Etiam volutpat neque non sapien convallis quis suscipit neque ultrices. Ut vel faucibus elit. Curabitur consectetur ornare enim, venenatis mollis sem mollis id. Nunc in magna vitae ligula gravida faucibus.
-
-						Vivamus eu lectus sem, ut volutpat massa. Duis consequat faucibus sodales. Suspendisse imperdiet commodo fringilla. Duis sodales ante ac nisl malesuada dapibus. Proin sit amet facilisis dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris nisl enim, adipiscing a viverra eget, posuere non erat. Nunc diam urna, dapibus iaculis aliquam faucibus, euismod vitae mi. Suspendisse varius orci nec augue eleifend at tempor diam fermentum.
-					</p>
-					<p><a class="btn primary large">Read more &raquo;</a></p>
+						<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+						<span class="muted">{{ post.date | date_to_string }}</span><br/>
+						
+						{% for tag in page.tags %}
+							
+							<span class="label tag">{{ tag }}</span>
+					
+						{% endfor %}
+						
+						{{ post.content }}
+						
+						<p><a href="{{ post.url }}" class="btn primary large">View Entry &raquo;</a></p>
+					</div>
 				</div>
-			</div>
+			{% endfor %}
       
 			<hr/>
 			
@@ -103,10 +106,11 @@
           <h3>Recent Entries</h3>
         	<ul class="unstyled">
 
-						{% for rpost in site.posts limit:20 offset:1 %}
+						<!-- put an offset:1 here later when i have more than one -->
+						{% for post in site.posts limit:20 %}
 						
-							<li><span class="muted">{{ rpost.date | date_to_string }}</span>
-							<a href="{{ rpost.url }}">{{ rpost.title }}</a></li>
+							<li><span class="muted">{{ post.date | date_to_string }}</span>
+							<a href="{{ post.url }}">{{ post.title }}</a></li>
 						
 						{% endfor %}
 					

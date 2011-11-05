@@ -1,4 +1,5 @@
 ---
+layout: default
 ---
 <div class='entry'>
   <h1 class='title'><a href='{{ page.url }}'>{{ page.title }}</a></h1>
@@ -23,12 +24,6 @@
 	{% for t in page.tags %}
 	<a href='http://www.google.com/search?q={{ t | escape }}+site:matt-hill.github.com'>{{ t }}</a>{% if forloop.last == false %}, {% endif %}
 	{% endfor %}
-      </span>
-    </div>
-    <div class='comments'>
-      <span>
-	comments: 
-	<a href='{{ page.url }}#disqus_thread'>View Comments</a>
       </span>
     </div>
   </div>
