@@ -1,15 +1,15 @@
 <div class='entry'>
-  <h1 class='title'><a href='{{ post.url }}'>{{ post.title }}</a></h1>
-  <div class='byline'>{{ post.date | date:"%B %d, %Y @ %H:%M" }}</div>
+  <h1 class='title'><a href='{{ page.url }}'>{{ page.title }}</a></h1>
+  <div class='byline'>{{ page.date | date:"%B %d, %Y @ %H:%M" }}</div>
   <div class='body'>
     {% if hide_extended %}
-      {{ post.content }}
-      {% if post.extended.size > 0 %}
-      <p>Continue reading at <a href='{{ post.url }}'>{{ post.title }}</a>.</p>
+      {{ page.content }}
+      {% if page.extended.size > 0 %}
+      <p>Continue reading at <a href='{{ page.url }}'>{{ page.title }}</a>.</p>
       {% endif %}
     {% else %}
-      {{ post.content }}
-      {{ post.extended }}
+      {{ page.content }}
+      {{ page.extended }}
     {% endif %}
   </div>
   <div class='footer'>
@@ -18,7 +18,7 @@
     <div class='tags'>
       <span>
 	tags:
-	{% for t in post.tags %}
+	{% for t in page.tags %}
 	<a href='http://www.google.com/search?q={{ t | escape }}+site:matt-hill.github.com'>{{ t }}</a>{% if forloop.last == false %}, {% endif %}
 	{% endfor %}
       </span>
@@ -26,7 +26,7 @@
     <div class='comments'>
       <span>
 	comments: 
-	<a href='{{ post.url }}#disqus_thread'>View Comments</a>
+	<a href='{{ page.url }}#disqus_thread'>View Comments</a>
       </span>
     </div>
   </div>

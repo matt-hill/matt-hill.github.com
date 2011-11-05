@@ -5,7 +5,7 @@ tags: [some,other,tag]
 ---
 
 # this is a test
-Did this `<blink` tag work? How about this code block?
+Did this `<blink>` tag work? How about this code block?
 
 
     require 'redcarpet'
