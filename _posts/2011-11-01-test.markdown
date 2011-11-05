@@ -1,8 +1,7 @@
 ---
-layout: default
+layout: post
 title: test
 tags: [some,other,tag]
-time: "21:12"
 ---
 
 # this is a test

@@ -105,7 +105,7 @@
 
 						{% for rpost in site.posts limit:20 offset:1 %}
 						
-							<li><span class="muted">{{ post.date | date_to_string }}</span>
+							<li><span class="muted">{{ rpost.date | date_to_string }}</span>
 							<a href="{{ rpost.url }}">{{ rpost.title }}</a></li>
 						
 						{% endfor %}
