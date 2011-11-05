@@ -6,10 +6,11 @@ time: "21:12"
 ---
 
 # this is a test
-Did this work?
+Did this `<blink` tag work? How about this code block?
 
-```ruby
-		require 'redcarpet'
-		markdown = Redcarpet.new("Hello World!")
-		puts markdown.to_html
-```
+
+    require 'redcarpet'
+    markdown = Redcarpet.new("Hello World!")
+    puts markdown.to_html
+
+How was that?
