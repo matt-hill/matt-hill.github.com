@@ -21,4 +21,8 @@ body {
 code { background-color: transparent; }
 #dsq-content {
 	background-image: url(../images/input-bg.png);
+	padding: 10px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
 }
