@@ -1,15 +1,15 @@
 ---
-layout: post
+layout: default
 title: test
-tags: [some,other,tag]
+tags: [some, other, tag]
 ---
 
 # this is a test
 Did this `<blink>` tag work? How about this code block?
 
 
-    require 'redcarpet'
-    markdown = Redcarpet.new("Hello World!")
-    puts markdown.to_html
+	require 'redcarpet'
+	markdown = Redcarpet.new("Hello World!")
+	puts markdown.to_html
 
 How was that?

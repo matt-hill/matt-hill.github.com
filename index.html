@@ -1,12 +1,11 @@
 ---
 layout: default
 title: matt-hill.github.com
+is_content_page: true
 ---
 
-# Welcome to matt-hill.github.com
+{% for post in site.posts limit:1 %}
 
-{% assign hide_extended = true %}
+	{% include post.html %}
 
-{% for post in site.posts limit:10 %}
-{% include post.html %}
 {% endfor %}

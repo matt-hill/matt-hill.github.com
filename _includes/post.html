@@ -1,30 +1,41 @@
----
-layout: default
----
-<div class='entry'>
-  <h1 class='title'><a href='{{ page.url }}'>{{ page.title }}</a></h1>
-  <div class='byline'>{{ page.date | date:"%B %d, %Y @ %H:%M" }}</div>
-  <div class='body'>
-    {% if hide_extended %}
-      {{ page.content }}
-      {% if page.extended.size > 0 %}
-      <p>Continue reading at <a href='{{ page.url }}'>{{ page.title }}</a>.</p>
-      {% endif %}
-    {% else %}
-      {{ page.content }}
-      {{ page.extended }}
-    {% endif %}
-  </div>
-  <div class='footer'>
-    <div class='comments'>
-    </div>
-    <div class='tags'>
-      <span>
-	tags:
-	{% for t in page.tags %}
-	<a href='http://www.google.com/search?q={{ t | escape }}+site:matt-hill.github.com'>{{ t }}</a>{% if forloop.last == false %}, {% endif %}
-	{% endfor %}
-      </span>
-    </div>
-  </div>
+<div class="row">
+	<div class="span16">
+		<img class="gravatar" src="http://www.gravatar.com/avatar/b03a69bb41e16893f89f361344d4dbff?size=80" />
+
+		<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+		<span class="muted">{{ post.date | date_to_string }}</span><br/>
+		
+		{% for t in post.tags %}
+		
+			<span class="label tag">{{ t }}</span>
+
+		{% endfor %}
+	
+		{{ post.content }}
+		
+		{% if page.is_content_page %}
+			<!-- in this case /index.html, so show the read more link -->
+			
+			<p><a href="{{ post.url }}" class="btn primary large">View Entry &raquo;</a></p>
+		
+		{% else %}
+			<!-- a full entry page so show the comments -->
+			
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+			    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			    var disqus_shortname = 'matthillongithub'; // required: replace example with your forum shortname
+
+			    /* * * DON'T EDIT BELOW THIS LINE * * */
+			    (function() {
+			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			    })();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+			
+		{% endif %}
+	</div>
 </div>
