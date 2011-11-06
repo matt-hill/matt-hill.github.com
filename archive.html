@@ -14,10 +14,10 @@ is_archive_page: true
 		<li>
 			<span class="muted">{{ post.date | date_to_string }}</span>
 			<a href="{{ post.url }}">{{ post.title }}</a>
-{{post}}
-			{% for item in post.tags %}
+			
+			{% for t in post.tags %}
 
-				<span class="label tag">{{ item }}</span>
+				<span class="label tag">{{ t }}</span>
 
 			{% endfor %}
 			

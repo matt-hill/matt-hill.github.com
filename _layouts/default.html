@@ -87,10 +87,13 @@
 				
 			{% else %}
 				<!-- blog entry page -->
-				{% for post in site.posts limit:1 %}
+				{% for post in site.posts %}
 	      
-					{% include post.html %}
+					{% if post.url == page.url %}
+					
+						{% include post.html %}
 				
+					{% endif %}
 				{% endfor %}
       {% endif %}
 
@@ -105,12 +108,16 @@
 	          <h3>Recent Entries</h3>
 	        	<ul class="unstyled">
 
-							<!-- put an offset:1 here later when i have more than one -->
 							{% for post in site.posts limit:20 %}
 						
-								<li><span class="muted">{{ post.date | date_to_string }}</span>
-								<a href="{{ post.url }}">{{ post.title }}</a></li>
+								<!-- don't show the current entry in the recent list -->
+								{% if post.url != page.url %}
 						
+									<li><span class="muted">{{ post.date | date_to_string }}</span>
+									<a href="{{ post.url }}">{{ post.title }}</a></li>
+							
+								{% endif %}
+								
 							{% endfor %}
 					
 						</ul>
