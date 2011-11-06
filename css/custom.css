@@ -17,5 +17,5 @@ body {
 .hero-unit {
 	background-image: url(../images/input-bg.png);
 }
-.label.tag { background: #444; }
+.label.tag { background: #666; }
 code { background-color: transparent; }

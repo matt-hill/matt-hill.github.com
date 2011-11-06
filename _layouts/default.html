@@ -50,7 +50,7 @@
 			
 			<!-- begin dynamic content area -->
 
-			{% if page.is_content_page %}$$$$$$$$$$$$$$$$
+			{% if page.is_content_page %}
 				<!-- front page or archive -->
 				{{ content }}
 				
@@ -75,7 +75,7 @@
 				<div class="row">
 	        <div class="span8">
 	          <h3>Recent Entries</h3>
-	        	<ul class="unstyled">
+	        	<ul class="unstyled" style="margin-top: 10px;">
 
 							{% for post in site.posts limit:20 %}
 						

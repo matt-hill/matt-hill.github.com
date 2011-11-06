@@ -2,6 +2,7 @@
 layout: default
 title: How To Use OAuth and Twitter in your Node.js / ExpressJS App
 tags: [ oauth, twitter, node.js, expressjs ]
+permalink: /post.cfm/how-to-use-oauth-and-twitter-in-your-node-js-expressjs-app
 ---
 
 So i'm pretty new (about a month in) to the beautiful creature that is [Node.js] and am playing with building an app where I'm not particularly interested in requiring its users to remember yet another set of login credentials as they surf on the intarwebs (nor am I interested in maintaining them), so it was a short jump to OAuth. If you're not familiar, OAuth basically allows your users to authenticate for your site using credentials from another site they frequent (Twitter, Facebook, Google, LinkedIn, etc). That system in turn provides you with unique identifier information about that user (like their username and user id) in order for you to store data against that user for your app or system without requiring, storing, or ever even seeing their password. Convenient. A quick scan on github produced [node-oauth], written by Ciaran Jessup, which appears to be a pretty well used wrapper module and is available on npm (its currently #17 on the 'depended on' list). So lets install that first.

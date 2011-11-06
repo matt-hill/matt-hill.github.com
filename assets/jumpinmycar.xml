@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+	<ModulePrefs title="Jump In My Car" height="350">
+		<Require feature="wave" />
+		<Require feature="dynamic-height" />
+		<Require feature="locked-domain" />
+		<Require feature="minimessage" />
+		<Content type="html" />
+	</ModulePrefs>
+	<Content type="html">
+	<![CDATA[ 
+		<script type="text/javascript">
+			
+			
+			function getIn(){
+				var state = wave.getState();
+				var passengerList = state.get('passengerList');
+				var viewerId = wave.getViewer().getId();
+				var delta = {};
+
+				if(passengerList){
+					passengerList = passengerList.split(/,/);
+					
+					if(passengerList.length < 6){
+						var isInList = false;
+						
+						for (var i=0; i < passengerList.length; ++i) {
+							if(passengerList[i] == viewerId){
+								isInList = true;
+								//alert("You're already in the car.");
+							}
+						}
+						
+						if(isInList == false){
+							passengerList.push(viewerId);
+							passengerList = passengerList.join(",");
+							delta['passengerList'] = passengerList;
+							state.submitDelta(delta);
+						}
+					}
+				} else {
+					delta['passengerList'] = viewerId;
+					state.submitDelta(delta);
+				}
+				setView();
+			}
+			
+			function getOut(){
+				var state = wave.getState();
+				var passengerList = state.get('passengerList');
+				var viewerId = wave.getViewer().getId();
+				var delta = {};
+
+				if(passengerList){
+					passengerList = passengerList.split(/,/);
+					
+					for (var i=0; i<passengerList.length; i++){ 
+						if(passengerList[i]==viewerId){
+							passengerList.splice(i,1);
+						} 
+					}
+					
+					passengerList = passengerList.join(",");
+					delta['passengerList'] = passengerList;
+					state.submitDelta(delta);
+					
+				} else {
+					delta['passengerList'] = "";
+					state.submitDelta(delta);
+				}
+				setView();
+			}
+			
+			function setView(){
+				try{
+					var passengers = document.getElementById("passengers");
+					var state = wave.getState();
+					var passengerList = state.get('passengerList');
+					var isInList = false;
+					var viewerId = wave.getViewer().getId();
+					
+					var getInButton = document.getElementById("getInButton");
+					var getOutButton = document.getElementById("getOutButton");
+					var carFull = document.getElementById("carFull");
+					var carEmpty = document.getElementById("carEmpty");
+					
+					passengers.innerHTML = "";
+					
+					if(passengerList){
+						passengerList = passengerList.split(/,/);
+						var thisPassenger = "";
+						var profileHtml = "";
+						
+						for (var i = 0; i < passengerList.length; ++i) {
+							if(passengerList[i] == viewerId){
+								isInList = true;
+							}
+							thisPassenger = wave.getParticipantById(passengerList[i]);
+							profileHtml = '<img class="passengerPic" width="40" height="40" src="' 
+								+ thisPassenger.getThumbnailUrl()
+								+ '" alt="' + thisPassenger.getDisplayName()
+								+ '" title="' + thisPassenger.getDisplayName()
+								+ '" />';
+							
+							passengers.innerHTML += profileHtml;
+						}
+						
+						carEmpty.style.display = "none";
+						if(isInList == true){
+							carFull.style.display = "none";
+							getInButton.disabled = true;
+							getInButton.className = "button buttonDisabled";
+							getOutButton.disabled = false;
+							getOutButton.className = "button";
+						} else {
+							if(passengerList.length >= 6){
+								carFull.style.display = "inline";
+								getInButton.disabled = true;
+								getInButton.className = "button buttonDisabled";
+								getOutButton.disabled = true;
+								getOutButton.className = "button buttonDisabled";
+							} else {
+								carFull.style.display = "none";
+								getInButton.disabled = false;
+								getInButton.className = "button";
+								getOutButton.disabled = true;
+								getOutButton.className = "button buttonDisabled";
+							}
+						}
+					} else {
+						carEmpty.style.display = "inline";
+						getInButton.disabled = false;
+						getInButton.className = "button";
+						getOutButton.disabled = true;
+						getOutButton.className = "button buttonDisabled";
+					}
+				} catch(e){
+					alert(e);
+				}
+			}
+			
+			function init() {
+				if (!wave.getViewer() || !wave.getHost()) {
+					// workaround for issue where wave.getViewer() and wave.getHost() are initially null
+					setTimeout("init();", 100);
+				return;
+				}
+				if (wave && wave.isInWaveContainer()) {
+					var host = wave.getHost();
+					var title = "Jump In " + host.getDisplayName() + "'s Car!";
+					document.getElementById("gadgetTitle").innerHTML = title;
+					
+					//var state = wave.getState();
+					//var delta = {};
+					//delta['passengerList'] = "";
+					//state.submitDelta(delta);
+					
+					wave.setStateCallback(setView);
+				}
+			}
+			
+			gadgets.util.registerOnLoadHandler(init);
+		</script>
+		
+		<div id="gadgetTitle" class="titleBar">Jump In My Car</div>
+		<div id="content" class="underBar">
+			<div id="car">
+				<div id="passengers" class="imageContainer"></div>
+			</div>
+			<div align="center">
+				<span id="carFull" style="display:none;">Oh sorry, this car's full. You should get in another one and race these guys!</span>
+				<span id="carEmpty" style="display:none;">Nobody's in the car. /cry</span>
+				<div class="buttonContainer">
+					<input type="button" class="button" id="getInButton" value="Get in" onclick="getIn()" />
+					<input type="button" class="button" id="getOutButton" value="Get out" onclick="getOut()" />
+				</div>
+			</div>
+		</div>
+		<div class="lsFooter">
+			<a href="http://www.moonlitscript.com/gadgets/jumpinmycar.xml">Jump In My Car Gadget XML</a><br/>
+			Written by <a href="http://www.moonlitscript.com" target="_blank">Matt Hill</a>
+		</div>
+		
+		<style>
+			.titleBar {
+				border-left: 1px solid #86B7ED; 
+				padding: 4px 0 0 8px; 
+				color: white; 
+				font-family: arial,san-serif;
+				font-size:13px;
+				height: 20px;
+				background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAXCAIAAAA0gN7GAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFxJREFUeNpiTFz+iWEoAxZVgd9D2wO33jIObQ/8//9/qHvg39D2AMNQ98D/f/9G88BoEhrRmXjI5wGG0Xpg1AMUJqHRemA0CY22hYa0B5gYhjgY9cCoBygEAAEGAOjwMAksun6KAAAAAElFTkSuQmCC);
+			}
+			.underBar {
+				background: #C9E2FC;
+				border-right: 1px solid #aaa;
+				border-bottom: 1px solid #aaa;
+				border-left: 1px solid #aaa;
+			}
+			#content {
+				text-align: center;
+				padding: 5px;
+			}
+			#car {
+				background-image: url(http://www.moonlitscript.com/gadgets/horriblecar.png);
+				background-position: 0 0;
+				background-repeat: no-repeat;
+				width: 430px;
+				height: 110px;
+				background-color: transparent;
+				text-align: left;
+				padding: 33px 0 0 59px;
+			}
+			#passengers {
+				width: 320px;
+				font-weight: bold;
+			}
+			.imageContainer {
+				padding: 5px 0 0 5px;
+				font-family: arial,san-serif;
+				font-size: 12px;
+			}
+			.profilePic {
+				border: 1px solid #ccc;
+				margin: 0 6px 5px 0;
+			}
+			.passengerPic {
+				border: 3px solid black;
+				margin: 0 7px 5px 0;
+			}
+			#carFull, #carEmpty {
+				font-family: arial,san-serif;
+				font-size: 11px;
+				color: black;
+				font-weight: bold;
+			}
+			.buttonContainer {
+				margin: 5px;
+				text-align:left;
+				border-top: 1px solid #aaa;
+				border-left: 1px solid #aaa;
+				border-bottom: 1px solid #aaa;
+				border-right: 0;
+				width:134px;
+				height:23px;
+				padding: 0 0 0 5px;
+			}
+			.button {
+				margin: 0 0 0 -4px;
+				cursor:pointer;
+				width: 69px;
+				display: inline;
+				border: 1px solid #F9F8F3;
+				border-bottom: 1px solid #ddd;
+				border-right: 1px solid #aaa;
+				font-family: arial,sans-serif;
+				font-size: 10.6667px;
+				color: black;
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAYCAIAAADF1mwTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGFJREFUeNrs1dEJACEMBFHvsP9C7CXFSBBBknhF3NfATgcPsqSPMRq5594rgAACkAFVxQZEBBtwzmED9t5swFqLDXB3NmDOiQb0zGQD6H9AAAE0Yp2QAL96G7xuZmjAJ8AAFChCof7t9cIAAAAASUVORK5CYII=);
+				background-position: 0 -1px;
+				height: 23px;
+			}
+			.buttonDisabled {
+				color: #7F7F7F !important;
+			}
+			.button:hover {
+				/*
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAYCAIAAADF1mwTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAERJREFUeNrs0wENAEAIw0AC+BeCGSy9DvI3B027npm4vIzj68zbDF1VDADwAQYASAiAhCQkIQYkxACALxPa3dMAT4ABAHUfBV0fX6ZtAAAAAElFTkSuQmCC);
+				background-position: 0 0;
+				*/
+			}
+			.lsFooter {
+				font-size: 10px;
+				font-family: arial,san-serif;
+				text-align: right;
+				color: #7F7F7F;
+			}
+			.lsFooter a {
+				color: #003EA8;
+			}
+		</style>
+	]]> 
+	</Content>
+</Module>
