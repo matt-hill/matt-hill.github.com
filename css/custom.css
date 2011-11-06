@@ -17,6 +17,14 @@ body {
 .hero-unit {
 	background-image: url(../images/input-bg.png);
 }
+.hero-unit h1 a { 
+	color: #404040;
+	text-decoration: none; 
+}
+.hero-unit h1 a:hover {
+	color: #00438a;
+	text-decoration: underline;
+}
 .label.tag { background: #666; }
 code { background-color: transparent; }
 #dsq-content {
