@@ -3,7 +3,7 @@
 		<img class="gravatar" src="http://www.gravatar.com/avatar/{{ site.gravatar_hash }}?size=80" />
 
 		<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-		<span class="muted">{{ post.date | date_to_string }}</span><br/>
+		<span class="date-label">{{ post.date | date: "%Y %b %d %a" | upcase }}</span><br/>
 		
 		{% for t in post.tags %}
 		
@@ -16,7 +16,7 @@
 		{% if page.is_content_page %}
 			<!-- in this case /index.html, so show the read more link -->
 			
-			<p><a href="{{ post.url }}" class="btn primary large">View Entry &raquo;</a></p>
+			<p><a href="{{ post.url }}" class="btn primary large">View Entry and Comments &raquo;</a></p>
 		
 		{% else %}
 			<!-- a full entry page so show the comments -->

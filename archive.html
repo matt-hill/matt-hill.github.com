@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Complete Entry Archive
+title: Blog Entry Archive
 is_content_page: true
 is_archive_page: true
 ---
@@ -12,7 +12,7 @@ is_archive_page: true
 	{% for post in site.posts %}
 
 		<li>
-			<span class="muted">{{ post.date | date_to_string }}</span>
+			<span class="date-label">{{ post.date | date: "%Y %b %d %a" | upcase }}</span>
 			<a href="{{ post.url }}">{{ post.title }}</a>
 			
 			{% for t in post.tags %}

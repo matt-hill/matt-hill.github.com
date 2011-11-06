@@ -17,7 +17,7 @@
     <!-- Le styles -->
     <link href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.css" rel="stylesheet">
     <link href="http://{{ site.domain }}/css/custom.css" rel="stylesheet">
-
+		
     <!-- Le fav and touch icons
     <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/examples/images/favicon.ico">
     <link rel="apple-touch-icon" href="http://twitter.github.com/bootstrap/examples/images/apple-touch-icon.png">
@@ -73,7 +73,7 @@
 			{% if page.is_archive_page != true %}
 			
 				<div class="row">
-	        <div class="span8">
+	        <div class="span9">
 	          <h3>Recent Entries</h3>
 	        	<ul class="unstyled" style="margin-top: 10px;">
 
@@ -82,7 +82,7 @@
 								<!-- don't show the current entry in the recent list -->
 								{% if post.url != page.url %}
 						
-									<li><span class="muted">{{ post.date | date_to_string }}</span>
+									<li><span class="date-label">{{ post.date | date: "%Y %b %d %a" | upcase }}</span>
 									<a href="{{ post.url }}">{{ post.title }}</a></li>
 							
 								{% endif %}
@@ -90,9 +90,9 @@
 							{% endfor %}
 					
 						</ul>
-						<a href="/archive/">View Complete Entry Archive</a>
+						<a href="/archive/">View Entry Archive</a>
 					</div>
-	        <div class="span8">
+	        <div class="span7">
 						<div id="recentcomments" class="dsq-widget">
 							<h3 class="dsq-widget-title">Recent Comments</h3>
 							<script type="text/javascript" 
@@ -104,9 +104,12 @@
 			{% endif %}
 
       <footer>
-        <p>&copy; {{ site.name }} 2011 - Design by <a href="http://www.moonlitscript.com">Matt Hill</a>
+        <p align="center">
+					Design by <a href="http://www.moonlitscript.com">Matt Hill</a>
 					based on a design by <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.
 					Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Share and Share Alike</a>.
+					Kindly hosted by <a href="http://www.github.com">GitHub</a>.
+					<br/>&copy; {{ site.name }} 2011
 				</p>
       </footer>
 
