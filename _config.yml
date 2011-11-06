@@ -5,3 +5,10 @@ permalink: pretty
 paginate: 10
 markdown: kramdown
 layout: default
+name: matt-hill.github.com
+domain: matt-hill.github.com
+disqus_shortname: matthillongithub
+gravatar_hash: b03a69bb41e16893f89f361344d4dbff
+twitter_profile: therealmatthill
+github_profile: matt-hill
+google_analytics_account: UA-9000235-1

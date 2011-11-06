@@ -44,7 +44,6 @@ Next, we'll add two routes to your app. This one does that call to Twitter where
 
 This is the path that Twitter will route your user back to once they authenticate (make sure this matches the callback URL supplied in the OAuath object creation at the top of your app, though it does not have to match what you registered as your callback URL on Twitter), also passing along some unique credentials like candy for your app to nom nom on:
 
-``` javascript
 	app.get('/auth/twitter/callback', function(req, res, next){
 		if (req.session.oauth) {
 			req.session.oauth.verifier = req.query.oauth_verifier;
@@ -66,7 +65,6 @@ This is the path that Twitter will route your user back to once they authenticat
 		} else
 			next(new Error("you're not supposed to be here."))
 	});
-```
 
 Now I'm sure you'll want to replace all the console logging and res sending with some cool templating magic (I suggest [EJS]), but otherwise, you should be good to go. Have fun.
 
