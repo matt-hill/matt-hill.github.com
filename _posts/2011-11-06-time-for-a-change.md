@@ -2,6 +2,7 @@
 layout: default
 title: Time For A Change
 tags: [ github, jekyll, liquid, markdown, textmate, bootstrap ]
+permalink: pretty
 ---
 
 Poor developer blogs. Every time their author finds a new engine, language, or inspiration, they're the first thing to get retooled or rewritten. And this blog is no exception. For the last few years, this blog has been running under [Mango Blog] on [Railo] hosted by the excellent hosting service [Alurium]. However, things change and I've recently stumbled onto the neat idea of hosting a blog through GitHub Pages. 
