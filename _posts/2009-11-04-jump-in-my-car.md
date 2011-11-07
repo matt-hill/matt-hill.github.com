@@ -14,4 +14,4 @@ I like to tinker with things (you know like developers do sometimes) and this la
 Normal usage applies. Just add the above link to the gadget drop down in the blip edit toolbar to insert this awesomely horrendous gadget. Fair warning: while this gadget does display my awesome MS Paint era skills (well Gimp but I tried hard to mimic the old ways), it will sadly never benefit humanity at large. That said, it was fun to make and I learned a lot about how gadgets work and how their change of state ties into the playback feature.
 I have several more ideas (most of which are at least a bit more useful than the above) but life being what it is who knows if/when I'll get around to building/releasing them.
 
-[jumpinmycar.xml]: http://{{ site.domain }}/assets/jumpinmycar.xml
+[jumpinmycar.xml]: http://{{ site.domain }}/attachments/jumpinmycar.xml
