@@ -1,3 +1,1 @@
-# matt-hill.github.com
-
-This is the repo for matt-hill.github.com.
+This is the blog repo for moonlitscript.com.
