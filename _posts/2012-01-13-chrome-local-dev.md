@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Chrome 
+title: Chrome and Cross Origin Requests
 tags: [ chrome, ajax, backbonejs ]
 ---
 
