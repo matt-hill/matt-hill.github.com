@@ -9,9 +9,11 @@
 .hero-unit {
 	color: #fff;
 	background-image: url(../images/header-bg.jpg);
-	background-position: bottom right;
+	background-position: bottom center;
 	background-repeat: no-repeat;
 	background-color: #000;
+	padding-top: 90px;
+	text-align: center;
 }
 .hero-unit h1 a { 
 	color: #404040;
