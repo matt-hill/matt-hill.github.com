@@ -22,7 +22,19 @@
 </head>
 
   <body>
+	
+		<!-- facebook sdk reference -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<!-- facebook sdk reference -->
 		
+			
     <div class="navbar">
       <div class="navbar-inner">
 				<form class="navbar-search pull-right" id="search" action="http://www.google.com/search">
