@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Blender / Orc
+title: Working With Blender / Orc
 tags: [ blender, 3D, modeling, sculpting ]
 ---
 
