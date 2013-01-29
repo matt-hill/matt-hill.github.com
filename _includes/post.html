@@ -13,7 +13,9 @@
 	
 		<br/><br/>
 		
-		{{ post.content }}
+		<div class="post-content">
+			{{ post.content }}
+		</div>
 		
 		{% if page.is_content_page %}
 			<!-- in this case /index.html, so show the read more link -->

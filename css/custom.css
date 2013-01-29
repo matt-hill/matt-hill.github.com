@@ -36,3 +36,9 @@ code { background-color: transparent; }
 	display: inline-block;
 	width: 140px; 
 }
+.post-content img {
+	border: 5px solid white;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	     -moz-box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	          box-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
