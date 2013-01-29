@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Blender Experiments
+title: Blender: Demon
 tags: [ blender, 3d, modeling, sculpting ]
 ---
 
@@ -18,7 +18,7 @@ Pulling down the polys from a different angle. Makes the general shape of a huma
 
 ![Demon-03](http://moonlitscript.com/attachments/blender/demon-03.png)
 
-Increased the subdivision levels in the multires modifier a few times. Using a high radius grab brush to flatten and deform the skull, and the clay brush to add layers to things like eyebrows and nose.
+Increased the subdivision levels in the multires modifier a few times. Used a high radius grab brush to flatten and deform the skull, and the clay brush to add layers to things like eyebrows and the nose.
 
 ![Demon-04](http://moonlitscript.com/attachments/blender/demon-04.png)
 
@@ -26,7 +26,7 @@ General formation of lips, nose, eye sockets, and ears using a combination of cl
 
 ![Demon-05](http://moonlitscript.com/attachments/blender/demon-05.png)
 
-Adding definition behind the ears. Also, not bad for the first time doing ears. Woot.
+Adding definition behind the ears. Also, not bad for the first time doing ears. All those years of Ear School finally paid off ( not really ).
 
 ![Demon-06](http://moonlitscript.com/attachments/blender/demon-06.png)
 
@@ -52,7 +52,7 @@ Front view of Demon.
 
 Slightly downward shot of Demon showing his array of horns and facial structure.
 
-And that's about it on this model. Overall, I feel much more comfortable with the crease brush for definition, and the combination of clay brush and smooth brush for cleanly building up layers on the model. I also learned not to be afraid to use Subdivide but I do agree with the known premise of trying to sculpt what you can on your current model before increasing the poly count and going farther. Its more stable for me, at least. Its also encouraging to see how quickly this model already looks ...much less crappy... than the previous model, and they were effectively done in succession. Thanks for reading!
+And that's about it on this model. Overall, I feel much more comfortable with the crease brush for definition, and the combination of clay brush and smooth brush for cleanly building up layers on the model. I also learned not to be afraid to use Subdivide but I do agree with the known premise of trying to sculpt what you can on your current model before increasing the poly count and going farther. Its more stable for me, at least. Its also encouraging to see how quickly this model already looks ...much less crappy... than the previous model lol. Thanks for reading!
 
 [Blender Experiments]: http://moonlitscript.com/2013/01/20/blender-experiments/
 [Blender]: http://www.blender.org/
