@@ -37,10 +37,8 @@ code { background-color: transparent; }
 	width: 140px; 
 }
 .post-content img {
-	text-align: center;
+	margin: 0 auto;
 	max-width: 800px;
-	border: 15px solid white;
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.25);
-	     -moz-box-shadow: 0 1px 3px rgba(0,0,0,.25);
-	          box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	border: 1px solid #ddd;
+	padding: 15px;
 }
