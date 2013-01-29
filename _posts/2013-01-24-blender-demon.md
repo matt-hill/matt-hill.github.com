@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Blender: Demon
-tags: [ blender, 3d, modeling, sculpting ]
+title: Blender / Demon
+tags: [ blender, 3D, modeling, sculpting ]
 ---
 
-So in my last post, [Blender Experiments], I documented my initial efforts with modeling in Blender starting from about zero experience with any related software. I have worked with actual clay and as it turns out that translates pretty well, but that's about it. In this post, I had an image of a particular sort of satyr floating around in my head for a few days so sat down one night and started in on it.
+So in my last post, [Blender Experiments], I documented my initial efforts with modeling in [Blender] starting from about zero experience with any related software. I have worked with actual clay and as it turns out that translates pretty well, but that's about it. In this post, I had an image of a particular sort of satyr floating around in my head for a few days so sat down one night and started in on it.
 
 Prior to this session I had combed through a ton of Amazon reviews for books on Blender character modeling, been to the local book store ( whose selection was poor on the topic ) and settled on purchasing the most excellent book, [Character Development in Blender 2.5], by Jonathan Williamson. While the book itself has been very informative and a great intro to Blender over all, what I found useful in my current newb state is the video walkthrough of creating a human head which is found on the DVD that comes with the book. He spends if I recall more than half an hour walking you through how he does what he does, and judging by accolades and community opinion, Mr. Williamson knows what he's talking about. So, much of my approach from a technical perspective draws from what I've gleaned from his expertise. The content of what I'm working on is out of my head, not from images, reference material, or anyone else's intellectual property. So here we go:
 
