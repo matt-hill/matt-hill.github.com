@@ -23,17 +23,15 @@
 
   <body>
 		
-    <div class="topbar">
-      <div class="fill">
-        <div class="container">
-					<ul class="nav">
-            <li class="active"><a href="/">Home</a></li>
-          </ul>
-					<form id="search" action="http://www.google.com/search">
-						<input type="hidden" name="sitesearch" value="{{ site.domain }}" />
-						<input type="text" name="q" placeholder="Search"></input>
-					</form>
-        </div>
+    <div class="navbar">
+      <div class="navbar-inner">
+				<form class="navbar-search pull-left" id="search" action="http://www.google.com/search">
+					<input type="hidden" name="sitesearch" value="{{ site.domain }}" />
+					<input type="text" class="search-query" name="q" placeholder="Search"></input>
+				</form>
+				<ul class="nav">
+          <li class="active"><a href="/">Home</a></li>
+        </ul>
       </div>
     </div>
 
@@ -68,7 +66,7 @@
 			{% if page.is_archive_page != true %}
 			
 				<div class="row">
-	        <div class="span9">
+	        <div class="span7">
 	          <h3>Recent Entries</h3>
 	        	<ul class="unstyled" style="margin-top: 10px;">
 
@@ -87,7 +85,7 @@
 						</ul>
 						<a href="/archive/">View Entry Archive</a>
 					</div>
-	        <div class="span7">
+	        <div class="span5">
 						<div id="recentcomments" class="dsq-widget">
 							<h3 class="dsq-widget-title">Recent Comments</h3>
 							<script type="text/javascript" 
