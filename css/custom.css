@@ -3,15 +3,15 @@
 	float: left;
 	margin: 10px 20px 10px 0;
 }
-.navbar {
+.navbar-inner {
+	background-image: url(../images/input-bg.png);
+}
+.hero-unit {
+	color: #fff;
 	background-image: url(../images/header-bg.jpg);
 	background-position: bottom right;
 	background-repeat: no-repeat;
 	background-color: #000;
-	color: white;
-}
-.hero-unit {
-	background-image: url(../images/input-bg.png);
 }
 .hero-unit h1 a { 
 	color: #404040;
