@@ -42,9 +42,9 @@
 					<input type="text" class="search-query" name="q" placeholder="Search"></input>
 				</form>
 				<ul class="nav">
-          <li class="active"><a href="/">Home</a></li>
-					<li><a href="https://twitter.com/therealmatthill">Twitter</a></li>
-					<li><a href="https://github.com/matt-hill/">GitHub</a></li>
+          <li class="active"><a href="/"><i class="icon-home"></i> Home</a></li>
+					<li><a href="https://twitter.com/therealmatthill"><i class="icon-user"></i> Twitter</a></li>
+					<li><a href="http://www.linkedin.com/in/mattohill"><i class="icon-user"></i> LinkedIn</a></li>
         </ul>
       </div>
     </div>
@@ -81,7 +81,7 @@
 			
 				<div class="row">
 	        <div class="span7">
-	          <h3>Recent Entries</h3>
+	          <h3><i class="icon-folder-close"></i> Recent Entries</h3>
 	        	<ul class="unstyled" style="margin-top: 10px;">
 
 							{% for post in site.posts limit:20 %}
@@ -97,11 +97,11 @@
 							{% endfor %}
 					
 						</ul>
-						<a href="/archive/"class="btn btn-large">View Entry Archive</a>
+						<a href="/archive/"class="btn btn-large"><i class="icon-folder-open"></i>  View Entry Archive</a>
 					</div>
 	        <div class="span5">
 						<div id="recentcomments" class="dsq-widget">
-							<h3 class="dsq-widget-title">Recent Comments</h3>
+							<h3 class="dsq-widget-title"><i class="icon-comment"></i> Recent Comments</h3>
 							<script type="text/javascript" 
 								src="http://{{ site.disqus_shortname }}.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200"></script>
 						</div>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Working With Blender / Demon
+title: Working With Blender To Model A Demon
 tags: [ blender, 3D, modeling, sculpting ]
 ---
 
