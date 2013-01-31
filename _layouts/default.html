@@ -85,17 +85,24 @@
 			{% if page.is_archive_page != true %}
 			
 				<div class="row">
-	        <div class="span6 pull-left content-area">
-	          <h3>Recent Entries</h3>
+	        <div class="span9 offset1 content-area">
+	          <h3>Other Recent Entries</h3>
 	        	<ul class="unstyled" style="margin-top: 10px;">
 
-							{% for post in site.posts limit:20 %}
+							{% for post in site.posts limit:10 %}
 						
 								<!-- don't show the current entry in the recent list -->
 								{% if post.url != page.url %}
 						
-									<li><span class="date-label">{{ post.date | date: "%Y-%b-%d %a" | upcase }}</span>
-									<a href="{{ post.url }}">{{ post.title }}</a></li>
+									<li>
+										<span class="date-label">{{ post.date | date: "%Y-%b-%d %a" | upcase }}</span>
+										<a href="{{ post.url }}" style="margin-right: 30px;">{{ post.title }}</a>
+										{% for t in post.tags %}
+
+											<span class="label">{{ t }}</span>
+
+										{% endfor %}
+									</li>
 							
 								{% endif %}
 								
@@ -104,7 +111,10 @@
 						</ul>
 						<a href="/archive/"class="btn btn-primary"><i class="icon-folder-open icon-white"></i> View Entry Archive</a>
 					</div>
-	        <div class="span4 pull-right content-area">
+				</div>
+			
+				<div class="row">
+	        <div class="span9 offset1 content-area">
 						<div id="recentcomments" class="dsq-widget">
 							<h3 class="dsq-widget-title">Recent Comments</h3>
 							<script type="text/javascript" 
