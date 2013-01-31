@@ -16,7 +16,7 @@ body {
 	-moz-border-radius: 9px;
 	border-radius: 9px;
 	float: left;
-	margin: 10px 20px 10px 0;
+	margin: 15px 20px 10px 0;
 	border: 1px solid #515151;
 }
 .navbar-inner {
@@ -39,6 +39,9 @@ body {
 .hero-unit h1 a:hover {
 	color: #00438a;
 	text-decoration: underline;
+}
+h3 {
+	color: #515151;
 }
 code { background-color: transparent; }
 #dsq-content {
