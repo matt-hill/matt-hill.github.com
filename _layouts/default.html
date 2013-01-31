@@ -94,7 +94,7 @@
 								<!-- don't show the current entry in the recent list -->
 								{% if post.url != page.url %}
 						
-									<li><span class="date-label">{{ post.date | date: "%Y %b %d %a" | upcase }}</span>
+									<li><span class="date-label">{{ post.date | date: "%Y-%b-%d %a" | upcase }}</span>
 									<a href="{{ post.url }}">{{ post.title }}</a></li>
 							
 								{% endif %}
@@ -102,7 +102,7 @@
 							{% endfor %}
 					
 						</ul>
-						<a href="/archive/"class="btn btn-primary"><i class="icon-folder-open"></i>  View Entry Archive</a>
+						<a href="/archive/"class="btn btn-primary"><i class="icon-folder-open icon-white"></i> View Entry Archive</a>
 					</div>
 	        <div class="span4 pull-right content-area">
 						<div id="recentcomments" class="dsq-widget">
