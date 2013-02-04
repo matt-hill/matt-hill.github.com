@@ -56,12 +56,13 @@ code { background-color: transparent; }
 	width: 140px; 
 }
 .post-content img {
-	margin: 20px 20px 10px 20px;
+	width: 100%;
+	margin: 20px 0 10px 0;
 	max-width: 800px;
 	border: 1px solid #515151;
 	padding: 15px;
 	background-color: white;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
